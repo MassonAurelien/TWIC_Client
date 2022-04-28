@@ -1,4 +1,4 @@
-package com.example.twic_client;
+package com.twic_client.Servlet;
 
 import java.io.*;
 
