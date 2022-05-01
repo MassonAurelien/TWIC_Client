@@ -20,25 +20,21 @@ import java.util.List;
 @WebServlet(name="ListeVilleServlet", value="/ListeVille")
 public class ListeVilleServlet extends HttpServlet {
 
-    private int nbVilleAffiche;
+    private int nbVilleAffiche = 50;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         VilleModel[] villes = this.getVille("http://localhost:8181/ville");
-        HttpSession session = request.getSession();
 
         List<VilleModel> villeAffiche = new ArrayList<>();
-        VilleModel ville = new VilleModel();
 
         for(int i=0; i<nbVilleAffiche ; i++){
-            ville = villes[i];
-            villeAffiche.add(ville);
+            villeAffiche.add(villes[i]);
         }
+
         int numPage = 1;
         request.setAttribute("villesAffichees", villeAffiche);
         request.setAttribute("numPage",numPage);
-
-
         this.getServletContext().getRequestDispatcher("/WEB-INF/ville.jsp").forward(request, response);
     }
 
@@ -53,15 +49,13 @@ public class ListeVilleServlet extends HttpServlet {
         else begin = 50*(numPage-1);
 
         List<VilleModel> villeAffiche = new ArrayList<>();
-        VilleModel ville = new VilleModel();
 
         for(int i = begin; i<begin+50;i++) {
             if (i < villes.length) {
-                ville = villes[i];
-                villeAffiche.add(ville);
+                villeAffiche.add(villes[i]);
             }
         }
-        request.setAttribute("villeAffiche", villeAffiche);
+        request.setAttribute("villesAffichees", villeAffiche);
 
         this.getServletContext().getRequestDispatcher("/WEB-INF/ville.jsp").forward(request, response);
     }

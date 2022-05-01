@@ -1,0 +1,10 @@
+
+y
+java:S1488,"^Immediately return this expression instead of assigning it to the temporary variable "villes".(»Ş™úúÿÿÿÿ
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(àÙïj
+P
+java:S1161":Add the "@Override" annotation above this method signature(‹¨¯¿
+P
+java:S4719+":Replace Charset.forName() call with StandardCharsets.UTF_8(î¨ö
+X
+java:S1128";Remove this unused import 'java.net.MalformedURLException'.(ªËŞˆ8£É½‰‡0
