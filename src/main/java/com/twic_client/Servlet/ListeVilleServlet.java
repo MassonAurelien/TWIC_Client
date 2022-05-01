@@ -61,7 +61,7 @@ public class ListeVilleServlet extends HttpServlet {
                 villeAffiche.add(ville);
             }
         }
-        request.setAttribute("villesAffichees", villeAffiche);
+        request.setAttribute("villeAffiche", villeAffiche);
 
         this.getServletContext().getRequestDispatcher("/WEB-INF/ville.jsp").forward(request, response);
     }

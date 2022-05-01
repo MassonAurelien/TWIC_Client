@@ -36,7 +36,7 @@
                 <th>Latitude</th>
 
             </tr>
-            <c:forEach items="${villesAffichees}" var="ville">
+            <c:forEach items="${villeAffiche}" var="ville">
                 <tr>
                     <td>${ville.getCodeINSEE()}</td>
                     <td>${ville.getCommune()}</td>
@@ -54,6 +54,7 @@
                 <input type="submit" type="hidden" name="page" id="page" value="${i}">
             </c:forEach>
         </form>
+
     </div>
 </body>
 </html>
